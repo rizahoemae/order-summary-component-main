@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            rh: "'Red Hat Display', sans-serif",
+          },
+          extend: {
+            colors: {
+              pale: "hsl(225, 100%, 98%)",
+              "des-blue": "hsl(224, 23%, 55%)",
+              "main-bg": "hsl(225, 100%, 94%)",
+              bright: "hsl(245, 75%, 52%)",
+              dark: "hsl(223, 47%, 23%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+    </style>
+    <title>Frontend Mentor | Order summary card</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Order summary card</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Order Summary
-
-  You can now listen to millions of songs, audiobooks, and podcasts on any 
-  device anywhere you like!
-
-  Annual Plan
-  $59.99/year
-
-  Change
-
-  Proceed to Payment
-  Cancel Order
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body class="bg-main-bg font-rh w-full items-center flex justify-center min-h-screen flex items-center justify-center">
+    <div class="w-64 h-auto items-center flex bg-white flex flex-col rounded-xl">
+      <img src="images/illustration-hero.svg" class="rounded-t-xl" alt="" />
+      <div class="mx-4 mt-2 flex flex-col items-center justify-center">
+        <div class="text-xl font-semibold text-dark">Order Summary</div>
+        <p class="text-[12px] text-center text-black text-opacity-50">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+        <div class="items-center flex px-2 mt-2 justify-between h-14 bg-pale w-full rounded-lg">
+          <div class="flex items-center justify-center">
+            <div class="bg-des-blue w-8 h-8 bg-opacity-50 flex items-center justify-center rounded-full">
+              <img src="images/icon-music.svg" alt="" />
+            </div>
+            <div class="flex ml-2 text-[12px] flex-col">
+              <p class="font-semibold">Annual Plan</p>
+              <p class="text-opacity-50 text-black">$59.99/year</p>
+            </div>
+          </div>
+          <a href="#" class="text-[12px] font-semibold underline text-bright">Change</a>
+        </div>
+        <div class="flex flex-col mb-4 text-[12px] font-semibold w-full">
+          <a href="#" class="mt-6 text-pale flex items-center justify-center h-10 w-full bg-bright rounded-lg"> Proceed to payment </a>
+          <a href="#" class="mt-1 text-black text-opacity-50 flex items-center justify-center h-10">Cancel Order</a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
